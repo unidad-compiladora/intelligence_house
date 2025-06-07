@@ -1,3 +1,13 @@
+def list_user():
+    pass
+def change_role():
+    pass
+
+
+
+
+
+
 def admin_user(user):
     
     while True:
@@ -16,7 +26,11 @@ def admin_user(user):
         if opcion == 2:
             pass 
         if opcion == 3:
-            pass
+            list_user()
+            mail=input("ingresar el mail del usaurio: ")
             
+            change_role(mail)
+            print("Usted ya no es mas Administrador...")
+            break
         if opcion == 4:
             break
