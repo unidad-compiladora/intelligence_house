@@ -29,16 +29,35 @@ def register():
             "is_admin":is_admin
         })
       
-    def authentication(mail):
+def authentication(mail):
 
-        for user in users:
-            if mail == user["email"]:
+    for user in users:
+        if mail == user["email"]:
            
                 return True
             
-        return False
+    return False
+
         
-        
+def admin_user_session():
+      while True:
+
+        mail=input("ingrese su mail: ")
+        password=input("ingrese su contraseña: ")
+
+        for user in users:
+
+            if mail == user["email"] and password == user["password"]:
+
+                if user["es_admin"] :
+
+                    return admin_user(user)
+                else:
+
+                    return standard_user(user)
+                
+        else:
+            print(" Usuario o contraseña incorrecta, vuelva antentarlo ")
 
 
         

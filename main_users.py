@@ -1,4 +1,4 @@
-from auth_system import register
+from auth_system import register,admin_user_session
 
 def login():
     
