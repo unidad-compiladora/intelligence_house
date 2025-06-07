@@ -1,32 +1,32 @@
-usuarios=[
+users=[
     {   
-        "nombre": "Carlos",
-        "apellido": "Gómez",
-        "email": "carlos.gomez@example.com",
-        "contrasena": "password123",
-        "es_admin": True
+        "name": "Carlos",
+        "lastname": "Gómez",
+        "mail": "carlos.gomez@example.com",
+        "password": "password123",
+        "is_admin": True
     },
     {   
 
-        "nombre": "Lucía",
-        "apellido": "Martínez",
-        "email": "lucia.martinez@example.com",
-        "contrasena": "lucia456",
-        "es_admin": False
+        "name": "Lucía",
+        "lastname": "Martínez",
+        "mail": "lucia.martinez@example.com",
+        "password": "lucia456",
+        "is_admin": False
     },
     {   
-        "nombre": "Diego",
-        "apellido": "Fernández",
-        "email": "diego.fernandez@example.com",
-        "contrasena": "diego789",
-        "es_admin": False
+        "name": "Diego",
+        "lastname": "Fernández",
+        "mail": "diego.fernandez@example.com",
+        "password": "diego789",
+        "is_admin": False
     },
     {   
-        "nombre": "María",
-        "apellido": "López",
-        "email": "maria.lopez@example.com",
-        "contrasena": "maria321",
-        "es_admin": False
+        "name": "María",
+        "lastname": "López",
+        "mail": "maria.lopez@example.com",
+        "password": "maria321",
+        "is_admin": False
     }
 ]
 
