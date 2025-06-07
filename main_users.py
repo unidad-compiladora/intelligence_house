@@ -1,3 +1,4 @@
+from auth_system import register
 
 def login():
     
