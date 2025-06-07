@@ -1,7 +1,21 @@
+from users_data_base import users 
 def list_user():
-    pass
-def change_role():
-    pass
+    for user in users:
+        rol="Administrador" if user["is_admin"] else "Usuario"
+                    
+        print("---------------------------------------------------------")
+
+        print(f"- nombre : {user["name"]}")
+        print(f"- apellido: {user["lastname"]}")
+        print(f"- email: {user['mail']}" )
+        print(f"- rol: {rol}\n")
+
+def change_role(mail):
+   for user in users:
+        if mail == user["mail"]:
+             user["is_admin"] = True
+        if mail != user["mail"] and user["is_admin"] == True:
+             user["is_admin"] = False
 
 
 
@@ -27,6 +41,7 @@ def admin_user(user):
             pass 
         if opcion == 3:
             list_user()
+
             mail=input("ingresar el mail del usaurio: ")
             
             change_role(mail)
