@@ -1,4 +1,6 @@
 from users_data_base import users
+from admin_user import admin_user
+from standard_user import standard_user
 
 def register():
     
