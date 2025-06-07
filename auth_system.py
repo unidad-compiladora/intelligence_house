@@ -9,9 +9,18 @@ def register():
     is_admin=False
 
     if len(users) == 0:
-        es_administrador = True
+        is_admin= True
 
 
+    if authentication(mail) :
+        
+        print("El usuario ya esta registrado")
+
+       
+    else:
+        
+        print(f"Usuario registrado, Bienvenido {name} ")
+       
         users.append({
             "name":name,
             "lastname":lastname,
@@ -19,6 +28,18 @@ def register():
             "password":password,
             "is_admin":is_admin
         })
+      
+    def authentication(mail):
+
+        for user in users:
+            if mail == user["email"]:
+           
+                return True
+            
+        return False
+        
+        
+
 
         
 
