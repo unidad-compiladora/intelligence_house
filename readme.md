@@ -1,12 +1,12 @@
-# Proyecto Módulo Programador
+# Proyecto ABP - Módulo Programador
 
 ## Nombre del Grupo  
     Unidad Compiladora
 
 ## Integrantes
-- **Ismael** - [GitHub](https://github.com/ximar2)
-- **Joaquín Chiozzi** - [GitHub](https://github.com/Joaquinchiozzi)
-- **Nahuel Bocanegra** - [GitHub](https://github.com/nahuelbocanegra)
+- **Ismael Iriarte** - [GitHub](https://github.com/ximar2)
+- **Joaquín Andrés Chiozzi Gordillo** - [GitHub](https://github.com/Joaquinchiozzi)
+- **Pablo Nahuel Bocanegra** - [GitHub](https://github.com/nahuelbocanegra)
 - **Marcos Bordón Rios** - [GitHub](https://github.com/Marcos-BR-03)
 
 ---
