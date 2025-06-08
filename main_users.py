@@ -10,13 +10,13 @@ def login():
         print("3-  Cerrar Aplicacion  ")
         print("\n")
 
-        opcion=int(input("Ingrese una opcion: "))
+        option=int(input("Ingrese una opcion: "))
 
-        if opcion == 1:
+        if option == 1:
             admin_user_session()
-        if opcion == 2:
+        if option == 2:
             register()
-        if opcion == 3:
+        if option == 3:
 
             print("---------------- Hasto prontos!!! ----------------")
 
