@@ -1,3 +1,5 @@
+from device_fun import listar_dispositivos
+
 def standard_user(user):
    
     while True:
@@ -37,7 +39,7 @@ def standard_user(user):
             pass
 
         if option == 3:
-            pass
+            listar_dispositivos()
         if option == 4:
             break
 
