@@ -9,8 +9,12 @@ def login():
         print("2-  Registrarse ")
         print("3-  Cerrar Aplicacion  ")
         print("\n")
-
-        option=int(input("Ingrese una opcion: "))
+        
+        try:
+            option = int(input("Ingrese una opción: "))
+        except ValueError:
+            print(" Opción inválida. Por favor, ingrese un número.")
+            continue
 
         if option == 1:
             admin_user_session()

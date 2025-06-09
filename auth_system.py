@@ -4,19 +4,19 @@ from standard_user import standard_user
 
 def register():
     
-    name=input("- Ingrese su nombre: ")
-    lastname=input("- Ingrese su apellido: ")
-    mail=input("- Ingrese su mail: ")
-    password=input("- Ingrese una contraseña: ")
+    name=input("- Ingrese su nombre: ").strip()
+    lastname=input("- Ingrese su apellido: ").strip()
+    mail=input("- Ingrese su mail: ").strip().lower()
+    password=input("- Ingrese una contraseña: ").strip()
     is_admin=False
 
-    if len(users) == 0:
-        is_admin= True
-
+    is_admin=len(users) == 0
+       
 
     if authentication(mail) :
         
         print("El usuario ya esta registrado")
+        return
 
        
     else:
@@ -34,7 +34,7 @@ def register():
 def authentication(mail):
 
     for user in users:
-        if mail == user["email"]:
+        if mail == user["mail"].lower() :
            
                 return True
             
@@ -44,14 +44,14 @@ def authentication(mail):
 def admin_user_session():
       while True:
 
-        mail=input("ingrese su mail: ")
-        password=input("ingrese su contraseña: ")
+        mail=input("ingrese su mail: ").strip()
+        password=input("ingrese su contraseña: ").strip()
 
         for user in users:
 
-            if mail == user["email"] and password == user["password"]:
+            if mail == user["mail"].lower() and password == user["password"]:
 
-                if user["es_admin"] :
+                if user["is_admin"] :
 
                     return admin_user(user)
                 else:
@@ -59,7 +59,7 @@ def admin_user_session():
                     return standard_user(user)
                 
         else:
-            print(" Usuario o contraseña incorrecta, vuelva antentarlo ")
+            print(" Usuario o contraseña incorrecta, vuelva a intentarlo ")
 
 
         

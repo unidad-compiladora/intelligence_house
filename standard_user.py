@@ -10,10 +10,17 @@ def standard_user(user):
         print("4 Salir Sesion\n")
         
         option=int(input("ingrese una opcion: "))
+                
+        try:
+            option = int(input("Ingrese una opción: "))
+        except ValueError:
+            print("Opción inválida. Por favor, ingrese un número.")
+            continue
+
 
         if option== 1:
            
-                    rol="Administrador" if user["es_admin"] else "Usuario"
+                    rol="Administrador" if user["is_admin"] else "Usuario"
 
                     print("-------------------- Datos personales--------------------")
 
