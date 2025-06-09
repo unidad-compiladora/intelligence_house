@@ -17,13 +17,7 @@ def change_role(mail):
         if mail.lower() != user["mail"].lower() and user["is_admin"] == True:
              user["is_admin"] = False
 
-
-
-
-
-
-def admin_user(user):
-    
+def admin_user(user):    
     
     while True:
         print(f"----------------- Bienvenido {user["name"]} -----------------")

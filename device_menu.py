@@ -51,7 +51,6 @@ def mostrar_menu():
              else:
                print("Error: Solo puede modificar 'control/consumo' o 'modo'.")
 
-
         elif opcion == "7":
             nombre = input(" Ingrese el nombre del dispositivo: ")
             consultar_estado(nombre)

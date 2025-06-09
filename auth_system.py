@@ -12,12 +12,10 @@ def register():
 
     is_admin=len(users) == 0
        
-
     if authentication(mail) :
         
         print("El usuario ya esta registrado")
         return
-
        
     else:
         
@@ -39,7 +37,6 @@ def authentication(mail):
                 return True
             
     return False
-
         
 def admin_user_session():
       while True:
@@ -60,9 +57,3 @@ def admin_user_session():
                 
         else:
             print(" Usuario o contraseña incorrecta, vuelva a intentarlo ")
-
-
-        
-
- 
-    
