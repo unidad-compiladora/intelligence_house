@@ -67,4 +67,4 @@ def mostrar_menu():
         else:
             print(" Opción inválida. Por favor intente de nuevo.")
 
-mostrar_menu()
+# mostrar_menu()

@@ -12,15 +12,17 @@ def list_user():
         print(f"- rol: {rol}\n")
 
 def change_role(mail):
+    found = False
     for user in users:
-        if mail.lower() == user["mail"].lower():
+        if user["mail"] == mail:
             user["is_admin"] = True
-        else:
-            user["is_admin"] = False
-    if found:
-        print(f"El usuario con correo {mail} ahora es administrador.")
-    else:
-        print("Usuario no encontrado.")
+            found = True
+            print(f"El usuario {user['name']} ahora es administrador.")
+    if not found:
+        print("No se encontró un usuario con ese correo.")
+
+# El cambio de rol ocurre en memoria. Pero no persiste porque no hay guardado automático.
+# Como mejora pensabamos usar un JSON.
 
 def admin_user(user):
     while True:

@@ -18,9 +18,10 @@ def login():
 
         if option == 1:
             user_session()
-        if option == 2:
+            break
+        elif option == 2:
             register()
-        if option == 3:
+        elif option == 3:
             print("---------------- Hasta pronto!!! ----------------")
             break
         else:

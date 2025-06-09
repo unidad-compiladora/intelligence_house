@@ -38,8 +38,9 @@ def user_session():
         for user in users:
             if mail == user["mail"].lower() and password == user["password"]:
                 if user["is_admin"]:
-                    return admin_user(user)
+                    admin_user(user)
                 else:
-                    return standard_user(user)
+                    standard_user(user)
+                return True
         else:
             print("Usuario o contraseña incorrecta, vuelva a intentarlo")
