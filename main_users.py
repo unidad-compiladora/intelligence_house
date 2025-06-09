@@ -1,4 +1,4 @@
-from auth_system import register,admin_user_session
+from auth_system import register, user_session
 
 def login():
     
@@ -17,14 +17,14 @@ def login():
             continue
 
         if option == 1:
-            admin_user_session()
+            user_session()
         if option == 2:
             register()
         if option == 3:
-
-            print("---------------- Hasto prontos!!! ----------------")
-
+            print("---------------- Hasta pronto!!! ----------------")
             break
+        else:
+            print("Opción inválida. Por favor, intente de nuevo.")
 
 if __name__ == "__main__":
     

@@ -1,50 +1,49 @@
+from device_menu import mostrar_menu
+from aut_controller import mostrar_menu_automatizacion
 from users_data_base import users 
+
 def list_user():
     for user in users:
-        rol="Administrador" if user["is_admin"] else "Usuario"
-                    
+        rol = "Administrador" if user["is_admin"] else "Usuario"
         print("---------------------------------------------------------")
-
-        print(f"- nombre : {user["name"]}")
-        print(f"- apellido: {user["lastname"]}")
+        print(f"- nombre : {user['name']}")
+        print(f"- apellido: {user['lastname']}")
         print(f"- email: {user['mail']}" )
         print(f"- rol: {rol}\n")
 
 def change_role(mail):
-   for user in users:
+    for user in users:
         if mail.lower() == user["mail"].lower():
-             user["is_admin"] = True
-        if mail.lower() != user["mail"].lower() and user["is_admin"] == True:
-             user["is_admin"] = False
+            user["is_admin"] = True
+        else:
+            user["is_admin"] = False
+    if found:
+        print(f"El usuario con correo {mail} ahora es administrador.")
+    else:
+        print("Usuario no encontrado.")
 
-def admin_user(user):    
-    
+def admin_user(user):
     while True:
-        print(f"----------------- Bienvenido {user["name"]} -----------------")
-        print("Administrador")
         print("\n")
-        print("1 Consultar automatizaciones activas")
+        print(f"----------------- Bienvenido {user['name']} (ADMIN) -----------------")
+        print("Administrador")
+        print("1 Consultar automatizaciones") 
         print("2 Gestionar dispositivos")
-        print("3 Modificar el rol de un usuario")
-        print("4 Salir de la sesion \n")
-                
-        try:
-            option = int(input("Ingrese una opción: "))
-        except ValueError:
-            print("❌ Opción inválida. Por favor, ingrese un número.")
-            continue
+        print("3 Modificar rol de usuario")
+        print("4 Salir Sesion\n")
 
-        if option == 1:
-            pass 
-        if option == 2:
-            pass 
-        if option == 3:
+        option = input("Ingrese una opción: ")
+
+        if option == "1":
+            mostrar_menu_automatizacion()
+        elif option == "2":
+            mostrar_menu()
+        elif option == "3":
             list_user()
-
-            mail=input("ingresar el mail del usaurio: ").strip()
-            
+            mail = input("Ingrese el correo del usuario que será administrador: ").strip()
             change_role(mail)
-            print("Usted ya no es mas Administrador...")
+        elif option == "4":
+            print("Sesión finalizada.")
             break
-        if option == 4:
-            break
+        else:
+            print("Opción inválida. Por favor intente de nuevo.")

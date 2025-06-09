@@ -1,5 +1,6 @@
 from device_fun import listar_dispositivos
 from device_menu import mostrar_menu
+from aut_controller import mostrar_menu_automatizacion
 
 def standard_user(user):
     while True:
@@ -7,7 +8,7 @@ def standard_user(user):
         print(f"----------------- Bienvenido {user['name']} -----------------")
         print("Usuario")
         print("1 Datos Personales")
-        print("2 Control dispositivos")
+        print("2 Ejecutar Automatización")
         print("3 Dispositivos disponibles")
         print("4 Salir Sesion\n")
         
@@ -27,12 +28,13 @@ def standard_user(user):
             print("---------------------------------------------------------")
 
         elif option == 2:
-            mostrar_menu()
+            mostrar_menu_automatizacion()
 
         elif option == 3:
             listar_dispositivos()
 
         elif option == 4:
+            print("Sesión finalizada")
             break
 
         else:
