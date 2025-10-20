@@ -10,8 +10,8 @@ class Device_manager():
         if devices:
             print("Dispositivos disponibles")
 
-            for nombre in devices.keys():
-                print(f"  - {nombre} ")
+            for name in devices.keys():
+                print(f"  - {name} ")
         else:
 
             print("No hay dispositivos disponibles")
@@ -53,3 +53,11 @@ class Device_manager():
             print(f"Dispositivo '{name}' no encontrado.")
 
     
+    
+    def update_devices(name,**kwargs):
+        if name in devices:
+            devices[name].update(kwargs)
+            print(f"'{name}' actualizado con exito")
+        else:
+            print(f"Dispositivo '{name}' no encontrado.")
+
