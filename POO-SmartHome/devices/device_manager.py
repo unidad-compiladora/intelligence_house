@@ -44,3 +44,12 @@ class Device_manager():
             print(f"El dispositivo '{device_name}' no fue encontrado.")
     
         self.list_divices()
+
+    def set_status_devices(self,name,new_state=False):
+        if name in devices:
+            devices[name]["estado"] = new_state
+            print(f"'{name}' ahora está {'encendido' if new_state else 'apagado'}.")
+        else:
+            print(f"Dispositivo '{name}' no encontrado.")
+
+    
