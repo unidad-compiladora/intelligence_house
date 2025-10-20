@@ -54,10 +54,17 @@ class Device_manager():
 
     
     
-    def update_devices(name,**kwargs):
+    def update_devices(self,name,**kwargs):
         if name in devices:
             devices[name].update(kwargs)
             print(f"'{name}' actualizado con exito")
         else:
             print(f"Dispositivo '{name}' no encontrado.")
 
+    def get_status_devices(name):
+        if name in devices:
+            print(f"Estado de '{name}':")
+            for devices, value in devices[name].items():
+                print(f"  {clave}: {valor}")
+        else:
+            print(f"Dispositivo '{name}' no encontrado.")
