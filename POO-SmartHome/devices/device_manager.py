@@ -64,7 +64,7 @@ class Device_manager():
     def get_status_devices(name):
         if name in devices:
             print(f"Estado de '{name}':")
-            for devices, value in devices[name].items():
-                print(f"  {clave}: {valor}")
+            for atribute, value in devices[name].items():
+                print(f"  {atribute}: {value}")
         else:
             print(f"Dispositivo '{name}' no encontrado.")
