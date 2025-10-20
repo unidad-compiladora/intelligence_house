@@ -13,7 +13,6 @@ def listar_dispositivos():
 
         print("No hay dispositivos disponibles")
 
-
 def buscar_dispositivos(nombre_dispositivo):
     listar_dispositivos()
     if nombre_dispositivo in dispositivos:
@@ -21,7 +20,6 @@ def buscar_dispositivos(nombre_dispositivo):
        return f"el dispositivos{nombre_dispositivo} fue encontrado"
     else:
         return f"el dispositivos{nombre_dispositivo} no fue encontrado"
-    
     
 def agregar_dispositivos(nuevo_dispositivo):
 
@@ -31,8 +29,6 @@ def agregar_dispositivos(nuevo_dispositivo):
         dispositivos[nuevo_dispositivo]={"datos":"dato"}
 
     listar_dispositivos()
-
-    
 
 def eliminar_dispositivos(dispositivo_eliminado):
      

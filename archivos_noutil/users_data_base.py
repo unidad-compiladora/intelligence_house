@@ -7,7 +7,6 @@ users=[
         "is_admin": True
     },
     {   
-
         "name": "Lucía",
         "lastname": "Martínez",
         "mail": "lucia.martinez@example.com",
@@ -29,5 +28,3 @@ users=[
         "is_admin": False
     }
 ]
-
-

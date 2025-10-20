@@ -1,3 +1,4 @@
+from aut_controller import mostrar_menu_automatizacion  
 from device_fun import (
     listar_dispositivos,
     buscar_dispositivos,
@@ -17,7 +18,8 @@ def mostrar_menu():
         print("5. Cambiar estado de dispositivo")
         print("6. Modificar dispositivo")
         print("7. Consultar estado del dispositivo")
-        print("8. Salir")
+        print("8. Configurar automatizaciones")
+        print("9. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -51,16 +53,18 @@ def mostrar_menu():
              else:
                print("Error: Solo puede modificar 'control/consumo' o 'modo'.")
 
-
         elif opcion == "7":
             nombre = input(" Ingrese el nombre del dispositivo: ")
             consultar_estado(nombre)
 
         elif opcion == "8":
+            configurar_automatizacion()
+
+        elif opcion == "9":
             print("fin de sesion!")
             break
 
         else:
             print(" Opción inválida. Por favor intente de nuevo.")
 
-mostrar_menu()
+# mostrar_menu()
