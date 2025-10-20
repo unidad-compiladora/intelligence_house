@@ -9,7 +9,7 @@ class DataBase:
         self.user=user,
         self.password=password,
         self.database=database
-        self.con=None
+        self.conn=None
 
     def connect(self):
 
@@ -25,4 +25,12 @@ class DataBase:
         except Error as e:
             print(f"Error de conexion: {e}")
  
+    def get_connection(self):
 
+        if self.con is None or not self.conn.is_connected():
+            self.connect()
+        return self.conn
+
+    def close(self):
+        if self.conn and self.conn.is_connected():
+            self.conn.close()
