@@ -3,7 +3,7 @@ devices=None
 
 
 
-class Divice_manager():
+class Device_manager():
 
     def list_divices(self):
 
@@ -35,4 +35,12 @@ class Divice_manager():
 
         self.list_divices()
 
+    def delete_devices(self,device_name):
+     
+        if device_name in devices:
+            del devices[device_name]
+            print(f"Dispositivo '{device_name}' eliminado exitosamente.")
+        else:
+            print(f"El dispositivo '{device_name}' no fue encontrado.")
     
+        self.list_divices()
