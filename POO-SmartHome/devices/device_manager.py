@@ -1,11 +1,13 @@
+from dao.interfaces.devices_dao import Devices_dao
+
 #necesito hacer la conexion con db para traer los dispositivos
 devices=None
 
 
 
-class Device_manager():
+class Device_manager(Devices_dao):
 
-    def list_divices(self):
+    def list_devices(self):
 
         if devices:
             print("Dispositivos disponibles")
@@ -16,9 +18,9 @@ class Device_manager():
 
             print("No hay dispositivos disponibles")
 
-    def search_divices(self,nombre_dispositivo):
+    def search_devices(self,nombre_dispositivo):
             
-        self.list_divices()
+        self.list_devices()
 
         if nombre_dispositivo in devices:
        
@@ -33,7 +35,7 @@ class Device_manager():
         else:
             devices[new_devices]={"datos":"dato"}
 
-        self.list_divices()
+        self.list_devices()
 
     def delete_devices(self,device_name):
      
@@ -43,7 +45,7 @@ class Device_manager():
         else:
             print(f"El dispositivo '{device_name}' no fue encontrado.")
     
-        self.list_divices()
+        self.list_devices()
 
     def set_status_devices(self,name,new_state=False):
         if name in devices:
