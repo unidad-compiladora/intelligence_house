@@ -18,3 +18,15 @@ class Devices_dao(ABC):
     @abstractmethod
     def update(self,id:int,data:dict):
         pass
+
+    @abstractmethod
+    def post(self,data:dict):
+        pass
+
+    @abstractmethod
+    def get_status(self,id:int):
+        pass
+    
+    @abstractmethod
+    def set_status(self,id:int):
+        pass
