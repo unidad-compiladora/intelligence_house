@@ -57,6 +57,9 @@ class Device_manager():
         self.conn.commit()
 
         cursor.close()
+
+    def post(self,data):
+        pass
     
     db.close()
 
@@ -71,15 +74,6 @@ class Device_manager():
 
     #     self.list_devices()
 
-    # def delete_devices(self,device_name):
-     
-    #     if device_name in devices:
-    #         del devices[device_name]
-    #         print(f"Dispositivo '{device_name}' eliminado exitosamente.")
-    #     else:
-    #         print(f"El dispositivo '{device_name}' no fue encontrado.")
-    
-    #     self.list_devices()
 
     # def set_status_devices(self,name,new_state=False):
     #     if name in devices:
