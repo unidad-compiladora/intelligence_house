@@ -14,18 +14,18 @@ class User(Users_dao):
 
         cursor.execute("SELECT * FROM Users")   
         users=cursor.fetchall()
-        for user in users:
-            print(user)
-
         cursor.close()
+
+        return users
 
     def get_by_id(self,id):
         
         cursor=self.__conn.cursor()
         query="SELECT * FROM Users WHERE user_id = %s"
         cursor.execute(query,(id,))
-        resultado=cursor.fetchone()
-        print(resultado)
+        cursor.close()
+        return cursor.fetchone()
+      
 
     def delete_by_id(self,id):
         pass
@@ -36,7 +36,12 @@ class User(Users_dao):
     
     def user_post(self,data):
 
-        pass
+        cursor= self.__conn.cursor()
+        query="INSERT INTO Users (name,lastname,email,password) VALUES (%s,%s,%s,%s)"
+        value=(data["name"],data["lastname"],data["email"],data["password"])
+        cursor.execute(query,value)
+        self.__conn.commit()
+        cursor.close
 
 
 
