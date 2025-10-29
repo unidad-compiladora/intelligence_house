@@ -1,11 +1,52 @@
+from dao.interfaces.users_dao import Users_dao
+from db.connection import  DataBase
+class User(Users_dao):
+   
+    def __init__ (self,db:DataBase):
+        self.__db=db
+        self.__conn=self.__db.connect()
+        
+
+    def get_all(self):
+
+        cursor=self.__conn.cursor()
+
+        cursor.execute("SELECT * FROM Users")   
+        users=cursor.fetchall()
+        for user in users:
+            print(user)
+
+        cursor.close()
+
+    def get_by_id(self,id):
+        
+        cursor=self.__conn.cursor()
+        query="SELECT * FROM Users WHERE user_id = %s"
+        cursor.execute(query,(id,))
+        resultado=cursor.fetchone()
+        print(resultado)
+
+    def delete_by_id(self,id):
+        pass
+
+    def update(self,id:int,data:dict):
+        
+        pass
+
+    
 
 
 
-class User():
+
+
+        
+db=DataBase()
+user=User(db)
+user.get_by_id(1)
+db.close()
+
    
-   
-   
-   """ def __init__(self, name, lastname, mail, password, is_admin=False):
+""" def __init__(self, name, lastname, mail, password, is_admin=False):
         self.__name = name
         self.__lastname = lastname
         self.__mail = mail
