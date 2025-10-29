@@ -1,5 +1,11 @@
-class User:
-    def __init__(self, name, lastname, mail, password, is_admin=False):
+
+
+
+class User():
+   
+   
+   
+   """ def __init__(self, name, lastname, mail, password, is_admin=False):
         self.__name = name
         self.__lastname = lastname
         self.__mail = mail
@@ -26,3 +32,4 @@ class User:
 
     def login(self, mail, password):
         return self.__mail == mail and self.__password == password
+"""

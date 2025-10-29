@@ -22,6 +22,5 @@ class Users_dao(ABC):
         
         pass
 
-    @abstractmethod
-    def post(self,data:dict):
-        pass
+   
+    
