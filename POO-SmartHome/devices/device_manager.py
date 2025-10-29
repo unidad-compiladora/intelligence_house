@@ -17,13 +17,12 @@ class Device_manager():
         query="SELECT * FROM Devices WHERE device_id = %s"
         cursor.execute(query,(id,))
         device=cursor.fetchone()        
+        cursor.close()
 
         if device is not None:   
-            print(f"device:{device[2]}")
+            return device
         else: 
-            print("este dispositivo no esta en nuestra base de datos")
-
-        cursor.close()
+            return False
         
 
     def get_all(self):
@@ -60,6 +59,22 @@ class Device_manager():
 
     def post(self,data):
         pass
+
+    def get_status(self,id):
+        
+        devices=self.get_by_id(id)
+        print(devices)
+
+        if devices is False:
+            return "El dispostivo no se encuentra en nuestra base de datos"
+
+        if devices[4] == 1:
+            return "Activo"
+        else:
+            return "Desactivado"
+
+        
+
     
     db.close()
 
@@ -101,4 +116,5 @@ class Device_manager():
 
 
 device=Device_manager()
-device.get_by_id(1)
+
+device.get_status(1)
