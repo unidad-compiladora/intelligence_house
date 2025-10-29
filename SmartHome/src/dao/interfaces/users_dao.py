@@ -22,5 +22,8 @@ class Users_dao(ABC):
         
         pass
 
+    def user_post(self,data:dict):
+
+        pass
    
     
