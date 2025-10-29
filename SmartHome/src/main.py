@@ -17,7 +17,18 @@ def main():
             print("opcion incorrecta , ingrese nuevamente")
             continue
 
-        
+        if opcion == 1:
+
+            user=input("Ingrese el usuario: ")
+            password=input("Ingrese su contraseña: ")
+
+            pass
+        if opcion == 2:
+            pass
+
+        if opcion == 3:
+
+            break
 
 if __name__== "__main__":
 
