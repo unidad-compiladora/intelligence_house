@@ -1,5 +1,6 @@
 from dao.interfaces.users_dao import Users_dao
 from db.connection import  DataBase
+
 class User(Users_dao):
    
     def __init__ (self,db:DataBase):
@@ -30,11 +31,12 @@ class User(Users_dao):
         pass
 
     def update(self,id:int,data:dict):
-        
         pass
 
     
+    def user_post(self,data):
 
+        pass
 
 
 
