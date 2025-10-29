@@ -1,13 +1,16 @@
+from users.user_manager import UserManager
+from users.user import User
+from db.connection import DataBase
+
 
 def main():
+    db=DataBase()
+    user_dao=User(db)
+    user_manager=UserManager(user_dao)
 
     while True:
 
-        print("--- Bienvenido a Smart Home--- ")
-
-        print("1- Iniciar Sesion ")
-        print("2- Registrarse ")
-        print("3- Salir")
+        menu()
 
         try:
             opcion=int(input("Elija una opcion: "))
@@ -24,12 +27,38 @@ def main():
 
             pass
         if opcion == 2:
-            pass
-        
-
+          
+           data=get_user_registration_data()
+           user_manager.register(data)
+           
         if opcion == 3:
 
             break
+
+
+def get_user_registration_data():
+        
+        name=input("ingrese su nombre: ")
+        lastname=input("ingrese su apellido: ")
+        email=input("ingrese su email : ")
+        password=input("ingrese su contraseña: ") 
+            
+        return {
+             "name":name,
+             "lastname":lastname,
+             "email":email,
+             "password":password,
+        }
+
+def menu():
+
+        print("--- Bienvenido a Smart Home--- ")
+
+        print("1- Iniciar Sesion ")
+        print("2- Registrarse ")
+        print("3- Salir")
+
+
 
 if __name__== "__main__":
 
