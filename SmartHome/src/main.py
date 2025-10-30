@@ -28,8 +28,14 @@ def main():
             pass
         if opcion == 2:
           
-           data=get_user_registration_data()
-           user_manager.register(data)
+            data=get_user_registration_data()
+            register_user=user_manager.register(data)
+
+            if register_user:
+                 print("Usuario cargado correctamente")
+
+            else:
+                 print(" Intente nuevamente ")
            
         if opcion == 3:
 

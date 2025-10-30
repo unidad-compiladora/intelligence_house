@@ -6,7 +6,8 @@ class UserManager:
 
     def register(self,data):
 
-        self.__user.user_post(data)
+        register_user=self.__user.user_post(data)
+        return register_user
 
 
     def login(self):

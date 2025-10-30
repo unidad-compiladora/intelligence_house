@@ -34,6 +34,10 @@ class User(Users_dao):
         pass
 
     
+  
+        
+
+
     def user_post(self,data):
 
         cursor= self.__conn.cursor()
@@ -41,16 +45,18 @@ class User(Users_dao):
         value=(data["name"],data["lastname"],data["email"],data["password"])
         cursor.execute(query,value)
         self.__conn.commit()
-        cursor.close
-
-
-
-
         
-db=DataBase()
-user=User(db)
-user.get_by_id(1)
-db.close()
+        post_user=cursor.rowcount
+        cursor.close()
+
+        if post_user == 1: 
+            
+            return True
+        
+        else:
+            
+            return False
+       
 
    
 """ def __init__(self, name, lastname, mail, password, is_admin=False):
